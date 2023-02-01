@@ -1,0 +1,25 @@
+{
+    "name": "ripple/ripple",
+    "description": "A simple yet powerful PHP framework that embraces modularity for a faster and quality driven development.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ripple\\Ripple\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aaron-Muuo",
+            "email": "aaronmuuo60@gmail.com"
+        }
+    ],
+    "require": {
+        "phpro/grumphp": "^1.15"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": true
+        }
+    }
+}
