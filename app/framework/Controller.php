@@ -17,6 +17,10 @@ class Controller{
     {
 
     }
+    protected function goBack(String $view, ...$params)
+    {
+
+    }
 }
 
 ?>
