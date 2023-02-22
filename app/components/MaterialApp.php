@@ -2,7 +2,7 @@
 
 namespace app\components;
 
-class Card{
+class MaterialApp{
     
 }
 
