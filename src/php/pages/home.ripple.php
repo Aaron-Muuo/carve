@@ -1,6 +1,7 @@
 <?php
 
 use app\components\Card;
+use app\components\LinearLayout;
 use app\components\Section;
 use app\components\Theme;
 use app\framework\Widget;
@@ -19,7 +20,7 @@ class Page extends Widget{
                 'background'=>Theme::$BG_DARK,
                 'corners'=>'6px',
                 'shadow'=>true,
-                'child'=>new LinearView([
+                'child'=>new LinearLayout([
 
                 ])
             ]
