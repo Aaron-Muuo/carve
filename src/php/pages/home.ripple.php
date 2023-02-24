@@ -19,7 +19,7 @@ class Page extends Widget{
                 'background'=>Theme::$BG_DARK,
                 'corners'=>'6px',
                 'shadow'=>true,
-                'children'=>new LinearView([
+                'child'=>new LinearView([
 
                 ])
             ]
