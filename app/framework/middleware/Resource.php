@@ -1,6 +1,6 @@
 <?php
 
-namespace app\framework;
+namespace app\framework\middleware;
 
 class Resource{
 
