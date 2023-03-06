@@ -2,7 +2,7 @@
 
 namespace app\components\layouts;
 
-class LinearLayout{
+class GridLayouts{
     
 }
 
