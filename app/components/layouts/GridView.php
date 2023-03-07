@@ -2,18 +2,16 @@
 
 namespace app\components\layouts;
 
-use app\components\theme\Theme;
-
-class LinearLayout{
+class GridView{
     
+
     public function __construct(
-        $orientation,
-        $children = []
+        $columns = 2,
+        $data = null
     )
     {
         
     }
-
 }
 
 ?>

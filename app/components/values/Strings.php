@@ -1,6 +1,6 @@
 <?php
 
-namespace app\components\theme;
+namespace app\components\values;
 
 class Strings{
 
