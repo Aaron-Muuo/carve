@@ -1,21 +1,21 @@
 <?php
 
-use app\components\Card;
-use app\components\LinearLayout;
-use app\components\Section;
-use app\components\Theme;
-use app\framework\Widget;
+use app\framework\core\Data;
+use app\framework\core\View;
+use app\components\theme\Theme;
+use app\components\widgets\Card;
+use app\components\widgets\Section;
+use app\components\layouts\LinearLayout;
 
-class Page extends Widget{
+class IndexView extends View{
 
-   function Build()
+   function Create(Data $data)
    {
 
         // extends layout
         $this->extends('parent');
 
         return new Section([
-            
             'child'=> new Card([
                 'background'=>Theme::$BG_DARK,
                 'corners'=>'6px',

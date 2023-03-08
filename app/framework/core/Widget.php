@@ -14,14 +14,6 @@ class Widget{
     {
         return true;
     }
-    public function Scaffold()
-    {
-        return true;
-    }
-    public function extends()
-    {
-        return true;
-    }
 
 }
 ?>
