@@ -1,3 +1,6 @@
+<?php
+
+
 class AssetManager
 {
 
@@ -14,3 +17,5 @@ class AssetManager
     ];
 
 }
+
+?>

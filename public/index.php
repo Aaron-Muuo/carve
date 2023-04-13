@@ -6,6 +6,7 @@ use app\framework\core\Application;
 // Entry point of the web application
 
 
+define('__NAMESPACE__', 'src');
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

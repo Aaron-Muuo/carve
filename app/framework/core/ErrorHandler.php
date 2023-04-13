@@ -9,6 +9,8 @@
     |
     */
 
+use app\framework\core\ErrorCodes;
+
     function customErrorHandler($errno, $errstr, $errfile, $errline) {
         
         $lines_array = file($errfile);
@@ -36,7 +38,7 @@
 
         $error_snippet .= "
                
-                <span class='error-line' style='background:#d32f2f;width:100%;display:block;cursor:pointer;'>".$errline.". ".$lines_array[$errline - 1]."</span>
+                <span class='error-line' style='background:#ffc2c2;width:100%;display:block;cursor:pointer;'>".$errline.". ".$lines_array[$errline - 1]."</span>
             
             ";
 
@@ -55,9 +57,15 @@
         }
 
 
-        $debug_page = file_get_contents( __DIR__.'/../app/debug/debug.html');
-        $debug_page = str_replace('{{error}}', "<b>Custom error:</b> [$errno] $errstr<br>", $debug_page);
+        $debug_page = file_get_contents( __DIR__.'/../../debug/debug.html');
+
+        $error = new ErrorCodes();
+        $error_message = $error->codes[$errstr][0];
+        $error_problem_description = $error->codes[$errstr][1];
+
+        $debug_page = str_replace('{{error}}', "<b>Error </b> [$errstr] $error_message<br>", $debug_page);
         $debug_page = str_replace('{{description}}', "Error on line <b>$errline</b> in <u>$errfile</u><br/><br/> $error_snippet", $debug_page);
+        $debug_page = str_replace('{{problem}}', $error_problem_description, $debug_page);
         echo $debug_page;
     }
 

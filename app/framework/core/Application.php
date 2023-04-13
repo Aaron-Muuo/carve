@@ -2,39 +2,46 @@
 
 namespace app\framework\core;
 
+use app\framework\middleware\Middleware;
 use Exception;
 
 class Application{
 
-    private static $start_time;
-    private $finish_time;
+    //will pass this to the middleware for processing
+    private static $request_url;
+    private static $request_method;
+    private static $request_params;
 
     public static function init($request){
 
-        // self::$start_time = time();
+        // print "<pre>";
+        // print_r($request);
+        // print "</pre>";exit;
+
+        self::$request_url = $request['request_url'];//complete request path including query parameters
+        self::$request_method = $request['request_method'];
+        self::$request_params = $request['request_params'];//list of controller [0], method [1] and optional parameters ..[2]
+
 
         try{
-    
-            //if call_some_function_that_returns_a_value
-            if(true) {
-
-                //call kernel to foward the request to controller with params, inject request body
-                //then echo the output from the controller back to user, this case a rendered page
-                //then return a new instance of the application
-                
-                return "Application booted successfully";
-
-                return new Application();
-                
-              }else{
-
-                throw new Exception("Value must be 1 or below");
-                
-              }
         
+            //call middleware to forward the request to controller with params, inject request body
+            //then echo the output from the controller back to user, this case a rendered page
+            //then return a new instance of the application
+
+            $middleware = new Middleware();
+            $middleware->process(self::$request_url, self::$request_method, self::$request_params);
+
+            return new Application();
+            
+        
+
+            // throw new Exception("Value must be 1 or below");
+                
+           
         }catch(Exception $e){
         
-            require __DIR__.'/../app/framework/ErrorHandler.php';
+            require 'ErrorHandler.php';
         
             trigger_error($e->getMessage());
             return new Application();
@@ -46,7 +53,7 @@ class Application{
     public function close(){
 
         //close connection
-        // $this->finish_time = time();
+        //do final cleanup
 
         return "Application closed.";
     }
