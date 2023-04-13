@@ -1,6 +1,26 @@
-# Ripple framework
+# Ripple PHP framework
 
-A simple yet powerful PHP framework that embraces modularity for a faster and quality driven development.
+A simple yet powerful PHP MVC framework that embraces modularity for a faster and quality driven development, also providing a way to reduce boilerplate html code, making code clean and easy to understand. Syntax has been borrowed from other frameworks such as Laravel, Yii and Flutter.
+
+## Installation and running
+
+Install dependancies
+
+```{}
+composer install
+```
+
+the navigate to public directory to start server from there
+
+```{}
+cd public
+```
+
+```{}
+php -S 127.0.0.1:8000
+```
+
+In your browser, navigate to 127.0.0.1:8000/home, you should see the output : "Hello World"
 
 ## Disclaimer
 
