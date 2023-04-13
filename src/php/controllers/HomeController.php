@@ -1,11 +1,14 @@
 <?php
 
 namespace src\php\controllers;
+
+use IndexPage;
+
 class HomeController{
 
     public static function index(){
 
-        // var_dump($re);
+        IndexPage::render([]);
 
         echo "Hello world";
 

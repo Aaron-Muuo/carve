@@ -7,13 +7,13 @@ use app\components\widgets\Card;
 use app\components\widgets\Section;
 use app\components\layouts\LinearLayout;
 
-class IndexView extends View{
+class IndexPage extends View{
 
-   function Create(Data $data)
+   public static function Create($data)
    {
 
         // extends layout
-        $this->extends('parent');
+        self::extends('parent');
 
         return new Section([
             'child'=> new Card([
