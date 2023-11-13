@@ -1,4 +1,4 @@
-# Ripple PHP framework
+# Carve PHP framework
 
 A simple yet powerful PHP MVC framework that embraces modularity for a faster and quality driven development, also providing a way to reduce boilerplate html code, making code clean and easy to understand. Syntax has been borrowed from other frameworks such as Laravel, Yii and Flutter.
 
